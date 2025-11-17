@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About us</title>
+  <style>
+    :root{
+      --bg:#f5f7fb; --card:#c6a47a; --muted:#4f6288; --accent:#27282c;
+      --radius:12px; --shadow: 0 8px 24px rgba(15,23,42,0.07);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#e3dcdc}
+    .wrap{max-width:1100px;margin:28px auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    header h1{margin:0;font-size:20px}
+    header p{margin:0;color:var(--muted)}
+    .grid{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:18px;
+    }
+
+    /* Mentor card */
+    .mentor {
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:14px;
+      display:flex;
+      flex-direction:column;
+      min-height:220px;
+      transition:transform .12s;
+    }
+    .mentor:hover{transform:translateY(-6px)}
+    .photo {
+      width:100%;
+      height:150px;
+      border-radius:10px;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#eef3ff;
+    }
+    .photo img{width:100%;height:100%;object-fit:cover;display:block}
+    .info{margin-top:12px;display:flex;flex-direction:column;gap:8px;flex:1}
+    .name{font-size:16px;font-weight:700}
+    .role{font-size:13px;color:var(--muted)}
+    .desc{font-size:14px;color:#0b1220;line-height:1.35}
+    .links{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap}
+    .link {
+      text-decoration:none;
+      border-radius:10px;
+      padding:8px 10px;
+      font-weight:600;
+      font-size:13px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid #e6eefc;
+      color:var(--accent);
+      background:linear-gradient(180deg, rgba(15,98,254,0.03), transparent);
+    }
+    .link svg{width:14px;height:14px;opacity:.9}
+
+    /* small helpers */
+    footer{margin-top:20px;color:var(--muted);font-size:13px}
+    @media (max-width:520px){
+      .photo{height:160px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>About us</h1>
+        <p> The Team which made this project</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="grid" id="mentors-grid">
+        <article class="mentor" id="mentor-1" data-name="Mentor One">
+          <div class="photo" aria-hidden="true">
+            <img src="edha .jpg" alt="Mentor One photo">
+          </div>
+          <div class="info">
+            <div>
+              <div class="name">Edha</div>
+              <div class="role">B.Tech — Frontend Developer</div>
+            </div>
+            <div class="desc">Managing team and content writing</div>
+            <div class="links">
+              <a class="link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+    
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4zM8.5 8h3.84v2.2h.05c.54-1 1.86-2.05 3.83-2.05 4.1 0 4.86 2.7 4.86 6.21V24h-4v-7.2c0-1.71-.03-3.91-2.38-3.91-2.38 0-2.74 1.86-2.74 3.78V24h-4z"/></svg>
+                LinkedIn
+              </a>
+              <a class="link" href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.75 5.48.75 11.77c0 4.9 3.16 9.06 7.56 10.52.55.1.75-.24.75-.53 0-.26-.01-.95-.01-1.86-3.07.67-3.72-1.32-3.72-1.32-.5-1.29-1.22-1.63-1.22-1.63-.99-.68.07-.67.07-.67 1.1.08 1.68 1.14 1.68 1.14.97 1.67 2.55 1.19 3.17.91.1-.71.38-1.19.69-1.46-2.45-.28-5.02-1.22-5.02-5.43 0-1.2.43-2.18 1.13-2.95-.11-.28-.49-1.41.11-2.94 0 0 .91-.29 3 .11 0 0 .95-.27 3.11.11 2.09-.4 3-.11 3-.11.6 1.53.22 2.66.11 2.94.7.77 1.13 1.75 1.13 2.95 0 4.22-2.57 5.15-5.02 5.42.39.34.74 1.02.74 2.06 0 1.49-.01 2.69-.01 3.06 0 .29.2.64.76.53C20.09 20.83 23.25 16.67 23.25 11.77 23.25 5.48 18.27.5 12 .5z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Mentor 2 -->
+        <article class="mentor" id="mentor-2" data-name="Mentor Two">
+          <div class="photo"><img src="me.png" alt="Mentor Two photo"></div>
+          <div class="info">
+            <div>
+              <div class="name">Sanskriti</div>
+              <div class="role">B.Tech — Frontend Engineer</div>
+            </div>
+            <div class="desc">Frontend,UX/UI, prototyping, and design.</div>
+            <div class="links">
+              <a class="link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+        </article>
+        <!-- Mentor 3 -->
+        <article class="mentor" id="mentor-3" data-name="Mentor Three">
+          <div class="photo"><img src="tammanna.jpg" alt="Student Three photo"></div>
+          <div class="info">
+            <div>
+              <div class="name">Tamanna</div>
+              <div class="role">M.Sc — Machine Learning</div>
+            </div>
+            <div class="desc"> ML models, data science, and research projects.</div>
+            <div class="links">
+              <a class="link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Mentor 4 -->
+        <article class="mentor" id="mentor-4" data-name="Mentor Four">
+          <div class="photo"><img src="udhav.jpg" alt="Mentor Four photo"></div>
+          <div class="info">
+            <div>
+              <div class="name">Udhav</div>
+              <div class="role">Product Designer,databases, and APIs</div>
+            </div>
+            <div class="desc"> UX/UI, prototyping, and design systems.</div>
+            <div class="links">
+              <a class="link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+    </main>
+</body>
+</html>

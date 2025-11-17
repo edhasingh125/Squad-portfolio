@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Class Portfolio — 20 Students</title>
+  <style>
+
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    a.btn{display:flex;padding:10px 12px;border-radius:10px;text-decoration:none;font-weight:600;background:linear-gradient(90deg,var(--accent),#ff2f00);color:#ffffff}
+  
+    :root{
+      --bg:#fefefe; --card:#c6b9b9; --muted:#6b7280; --accent:#2a459e;
+      --radius:12px; --shadow: 0 8px 24px rgba(15,23,42,0.07);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#0f172a}
+    .wrap{max-width:1100px;margin:28px auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    header h1{margin:0;font-size:20px}
+    header p{margin:0;color:var(--muted)}
+    .grid{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:18px;
+    }
+
+    /* Mentor card */
+    .mentor {
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:14px;
+      display:flex;
+      flex-direction:column;
+      min-height:220px;
+      transition:transform .12s;
+    }
+    .mentor:hover{transform:translateY(-6px)}
+    .photo {
+      width:100%;
+      height:150px;
+      border-radius:10px;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#eef3ff;
+    }
+    .photo img{width:100%;height:100%;object-fit:cover;display:block}
+    .info{margin-top:12px;display:flex;flex-direction:column;gap:8px;flex:1}
+    .name{font-size:16px;font-weight:700}
+    .role{font-size:13px;color:var(--muted)}
+    .desc{font-size:14px;color:#0b1220;line-height:1.35}
+    .links{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap}
+    .link {
+      text-decoration:none;
+      border-radius:10px;
+      padding:8px 10px;
+      font-weight:600;
+      font-size:13px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid #e6eefc;
+      color:var(--accent);
+      background:linear-gradient(180deg, rgba(15,98,254,0.03), transparent);
+    }
+    .link svg{width:14px;height:14px;opacity:.9}
+
+    /* small helpers */
+    footer{margin-top:20px;color:var(--muted);font-size:13px}
+    @media (max-width:520px){
+      .photo{height:160px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Class Portfolio</h1>
+        <p>Each card is a separate division with image, name, role, short bio, LinkedIn & GitHub links.</p>
+      </div>
+      <div style="text-align:right;color:var(--muted);font-size:13px">
+        Tip: edit <code>src</code> for images and the <code>href</code> attributes for links.
+      </div>
+    </header>
+
+    <main>
+      <section class="grid" id="mentors-grid">
+        <article class="student" id="student1" data-name="student One">
+          <div class="photo" aria-hidden="true">
+            <img src="Normal pfp🎀.jpg" alt="Mentor One photo">
+          </div>
+          <div class="info">
+            <div>
+              <div class="name">Kumar saraswat</div>
+              <div class="role">B.Sc — Frontend Developer</div>
+            </div>
+            <div class="desc">This student animate so well that his doodles look ready for a Netflix Deal.</div>
+            <div class="links">
+              <a class="link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+    
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4zM8.5 8h3.84v2.2h.05c.54-1 1.86-2.05 3.83-2.05 4.1 0 4.86 2.7 4.86 6.21V24h-4v-7.2c0-1.71-.03-3.91-2.38-3.91-2.38 0-2.74 1.86-2.74 3.78V24h-4z"/></svg>
+                LinkedIn
+              </a>
+              <a class="link" href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.75 5.48.75 11.77c0 4.9 3.16 9.06 7.56 10.52.55.1.75-.24.75-.53 0-.26-.01-.95-.01-1.86-3.07.67-3.72-1.32-3.72-1.32-.5-1.29-1.22-1.63-1.22-1.63-.99-.68.07-.67.07-.67 1.1.08 1.68 1.14 1.68 1.14.97 1.67 2.55 1.19 3.17.91.1-.71.38-1.19.69-1.46-2.45-.28-5.02-1.22-5.02-5.43 0-1.2.43-2.18 1.13-2.95-.11-.28-.49-1.41.11-2.94 0 0 .91-.29 3 .11 0 0 .95-.27 3.11.11 2.09-.4 3-.11 3-.11.6 1.53.22 2.66.11 2.94.7.77 1.13 1.75 1.13 2.95 0 4.22-2.57 5.15-5.02 5.42.39.34.74 1.02.74 2.06 0 1.49-.01 2.69-.01 3.06 0 .29.2.64.76.53C20.09 20.83 23.25 16.67 23.25 11.77 23.25 5.48 18.27.5 12 .5z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- student 2 -->
+        <article class="student" id="student2" data-name="student Two">
+          <div class="photo"><img src="Normal pfp🎀.jpg" alt="Mentor Two photo"></div>
+          <div class="info">
+            <div>
+              <div class="name">Aditya padhy</div>
+              <div class="role">B.Tech — Backend Engineer</div>
+            </div>
+            <div class="desc">This student is so talented that he can here and answer even while sleeping.</div>
+            <div class="links">
+              <a class="link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+        </article>
+        <!--student3 -->
+        <article class="student" id="student" data-name="student Three">
+          <div class="photo"><img src="Normal pfp🎀.jpg" alt="Student Three photo"></div>
+          <div class="info">
+            <div>
+              <div class="name">Akshat Sahu</div>
+              <div class="role">M.Sc — Machine Learning</div>
+            </div>
+            <div class="desc">While the rest of us are chilling, you will always find this person watching online lectures — even during free time.</div>
+            <div class="links">
+              <a class="link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- student4 -->
+        <article class="student" id="student" data-name="student Four">
+          <div class="photo"><img src="nimra.jpg" alt="student Four photo"></div>
+          <div class="info">
+            <div>
+              <div class="name">Nimra Mittal</div>
+              <div class="role">B.Des — Product Designer</div>
+            </div>
+            <div class="desc">you’ll always catch this person watching anime or movies during every free minute — break time, lunch time, anytime.</div>
+            <div class="links">
+              <a class="link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- student5 -->
+        <article class="student" id="student" data-name="student Five">
+          <div class="photo"><img src="anurag.jpg" alt="student Five photo"></div>
+          <div class="info">
+            <div>
+              <div class="name">Anurag</div>
+              <div class="role">B.Des — Product Designer</div>
+            </div>
+            <div class="desc">Short bio: UX/UI, prototyping, and design systems.</div>
+            <div class="links">
+              <a class="link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- student 6 -->
+        <article class="student" id="student" data-name="student Six">
+          <div class="photo"><img src="jatin.jpg" alt="student Six photo"></div>
+          <div class="info">
+            <div>
+              <div class="name">Jatin Kumar</div>
+              <div class="role">B.Des — Product Designer</div>
+            </div>
+            <div class="desc">Short bio: UX/UI, prototyping, and design systems.</div>
+            <div class="links">
+              <a class="link" href="https://www.linkedin.com/in/jatin-kumar-548745361?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+        </article>
+   
+      <!-- student 7 -->
+        <article class="student" id="student" data-name="student seven">
+          <div class="photo"><img src="edha .jpg" alt="student seven photo"></div>
+          <div class="info">
+            <div>
+              <div class="name">Edha Singh</div>
+              <div class="role">B.Des — Product Designer</div>
+            </div>
+            <div class="desc">This student is rarely seen in the real world because 90% of the time they’re mining diamonds, building castles,in Minecraft. If you can’t find them in class, just check the nearest virtual cave.</div>
+            <div class="links">
+              <a class="link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+        </article>
+      <div class="actions">
+  
+      <!-- student 7 -->
+        <article class="student" id="student" data-name="student eight">
+          <div class="photo"><img src="Normal pfp🎀.jpg" alt="student eight photo"></div>
+          <div class="info">
+            <div>
+              <div class="name">Kartik Sharma</div>
+              <div class="role">B.Des — Product Designer</div>
+            </div>
+            <div class="desc">Known for making late entry a daily ritual, this student stays quiet until their phone suddenly goes BOOM! with that one iconic ringtone that always rings right in the middle of lecture.</div>
+            <div class="links">
+              <a class="link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+        </article>
+    
+      <!-- student 7 -->
+        <article class="student" id="student" data-name="student nine">
+          <div class="photo"><img src="samantha.jpg" alt="student nine photo"></div>
+          <div class="info">
+            <div>
+              <div class="name">Shreshtha Yadav</div>
+              <div class="role">B.Des — Product Designer</div>
+            </div>
+            <div class="desc">This student lives permanently in the coding universe, typing away like the world depends on it. And the headphones? Practically a part of his body..</div>
+            <div class="links">
+              <a class="link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+        </article>
+      
+      </div>
+        <article class="student" id="student" data-name="student eight">
+          <div class="photo"><img src="mishtii.jpg" alt="student Six photo"></div>
+          <div class="info">
+            <div>
+              <div class="name">Mishthi Jain</div>
+              <div class="role">B.Des — Product Designer</div>
+            </div>
+            <div class="desc">she might shed a tear or two easily, but she also wins everyone’s hearts by bringing homemade food for all the hostels—tears and treats included!.</div>
+            <div class="links">
+              <a class="link" href="https://www.linkedin.com/in/the-mishthi-jain" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+        </article>
+      >
+        <article class="student" id="student" data-name="student ten">
+          <div class="photo"><img src="Normal pfp🎀.jpg" alt="student ten photo"></div>
+          <div class="info">
+            <div>
+              <div class="name">Garvit Singh</div>
+              <div class="role">B.Des — Product Designer</div>
+            </div>
+            <div class="desc">A silent soul of the class, always calm and composed, yet fully focused on studies.</div>
+            <div class="links">
+              <a class="link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+        </article> 
+       <article class="student" id="student" data-name="student eleven">
+          <div class="photo"><img src="devesh.jpg" alt="student eleven photo"></div>
+          <div class="info">
+            <div>
+              <div class="name">Devesh Sharma</div>
+              <div class="role">B.Des — Product Designer</div>
+            </div>
+            <div class="desc">Known for turning every conversation into a Bikaner travelogue, complete with bujiya reviews—affectionately called ‘Bikaner to Boston.</div>
+            <div class="links">
+              <a class="link" href="https://www.linkedin.com/in/devesh-kumar-sharma-0b3b70391?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+        </article>        
+       <article class="student" id="student" data-name="student twelve">
+          <div class="photo"><img src="Normal pfp🎀.jpg" alt="student twelve photo"></div>
+          <div class="info">
+            <div>
+              <div class="name">Harshit Kataria</div>
+              <div class="role">B.Des — Product Designer</div>
+            </div>
+            <div class="desc">You will always find this person busy watching youtube or matches.somethimes even between lactures.</div>
+            <div class="links">
+              <a class="link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+        </article> 
+       <article class="student" id="student" data-name="student 13">
+          <div class="photo"><img src="tavish.jpg" alt="student 13 photo"></div>
+          <div class="info">
+            <div>
+              <div class="name">Tavish Modi</div>
+              <div class="role">B.Des — Product Designer</div>
+            </div>
+            <div class="desc">A true cricket fan who never misses a match.Passionate about cricket, he treats every break like a mini stadium visit, never letting a match slip by.</div>
+            <div class="links">
+              <a class="link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+        </article> 
+       <article class="student" id="student" data-name="student 14">
+          <div class="photo"><img src="udhav.jpg" alt="student 14 photo"></div>
+          <div class="info">
+            <div>
+              <div class="name">Udhav Runthala</div>
+              <div class="role">B.Des — Product Designer</div>
+            </div>
+            <div class="desc">A calm student during lectures and a warrior in the gaming world—balancing both like it’s an in-game mission.</div>
+            <div class="links">
+              <a class="link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+        </article> 
+     <article class="student" id="student" data-name="student 15">
+          <div class="photo"><img src="tammanna.jpg" alt="student 15 photo"></div>
+          <div class="info">
+            <div>
+              <div class="name">Tammana Sangwan</div>
+              <div class="role">B.Des — Product Designer</div>
+            </div>
+            <div class="desc">Still learning JavaScript herself, but somehow already the group’s go-to ‘JS teacher’,Not a JS pro yet, but already teaching like one.</div>
+            <div class="links">
+              <a class="link" href="https://www.linkedin.com/in/tamanna-sangwan-53520537b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+        </article> 
+     <article class="student" id="student" data-name="student 16">
+          <div class="photo"><img src="tany.jpg" alt="student 16 photo"></div>
+          <div class="info">
+            <div>
+              <div class="name">Tanushree Srivastav</div>
+              <div class="role">B.Des — Product Designer</div>
+            </div>
+            <div class="desc">Tiny in size, quick to get irritated—she’ll snap faster than you can blink!.</div>
+            <div class="links">
+              <a class="link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+        </article> 
+     <article class="student" id="student" data-name="student 17">
+          <div class="photo"><img src="deepak.png" alt="student 17 photo"></div>
+          <div class="info">
+            <div>
+              <div class="name">Deepak Rajput</div>
+              <div class="role">B.Des — Product Designer</div>
+            </div>
+            <div class="desc">His stomach has no off switch—he’s always hungry, and yes, even the mentor isn’t safe from his food requests.</div>
+            <div class="links">
+              <a class="link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+        </article> 
+    <article class="student" id="student" data-name="student 19">
+          <div class="photo"><img src="me.png" alt="student 19 photo"></div>
+          <div class="info">
+            <div>
+              <div class="name">Sanskriti Kant</div>
+              <div class="role">B.Des — Product Designer</div>
+            </div>
+            <div class="desc">Clumsy promax.</div>
+            <div class="links">
+              <a class="link" href="https://www.linkedin.com/in/sanskriti-kant-5a111437a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+        </article> 
+                         
+
+    </main>
+</body>
+</html>
