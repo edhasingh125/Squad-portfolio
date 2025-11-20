@@ -6,8 +6,18 @@
   <title>Class Portfolio — 20 Students</title>
   <style>
 
-    .actions{display:flex;gap:12px;flex-wrap:wrap}
-    a.btn{display:flex;padding:10px 12px;border-radius:10px;text-decoration:none;font-weight:600;background:linear-gradient(90deg,var(--accent),#ff2f00);color:#ffffff}
+    .actions{
+      display: flex;
+      align-items: flex-end;
+    }
+    a.btn{border-radius:10px;
+      text-decoration:none;
+      font-weight:600;
+      background:linear-gradient(90deg,var(--accent),#ff2f00);color:#ffffff
+      
+    
+    
+    }
   
     :root{
       --bg:#f5f7fb; --card:#fff; --muted:#6b7280; --accent:#2a459e;
@@ -73,6 +83,58 @@
     footer{margin-top:20px;color:var(--muted);font-size:13px}
     @media (max-width:520px){
       .photo{height:160px}
+    }
+
+    /* Updated styles for centering and beautifying the portfolio title, GitHub/LinkedIn links, and Next button */
+
+    /* Center and style the portfolio title */
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    header h1 {
+      font-size: 28px;
+      font-weight: bold;
+      color: var(--accent);
+      background: linear-gradient(90deg, var(--accent), #ff2f00);
+      background-clip: text; /* Standard property */
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    /* Center GitHub and LinkedIn links in each mentor card */
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    /* Style the Next button */
+    .actions {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .actions a.btn {
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      background: linear-gradient(90deg, var(--accent), #ff2f00);
+      border: none;
+      border-radius: var(--radius);
+      color: #fff;
+      text-decoration: none;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .actions a.btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.15);
     }
   </style>
 </head>
@@ -192,6 +254,22 @@
             </div>
           </div>
         </article>
+        <!--Mentor 7-->
+        <article class="mentor" id="mentor-7" data-name="Mentor Seven">
+          <div class="photo"><img src="kanchan.png" alt="Mentor Seven photo"></div>
+          <div class="info">
+            <div>
+              <div class="name">Kanchan Kumari</div>
+              <div class="role">Campus Manager</div>
+            </div>
+            <div class="desc">Kanchan is our manager—organized, dependable, and always keeping everything running smoothly behind the scenes. Whether it’s coordination, support, or solving last-minute chaos, she handles it all with calm confidence.</div>
+            <div class="links">
+              <a class="link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+        </article>        
+
       <div class="actions">
         <a class="btn" href="students.html" style="
        display: inline-block;
